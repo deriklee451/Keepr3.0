@@ -1,0 +1,19 @@
+import { Account } from "./Account.js"
+
+export class KeptKeep {
+  constructor(data) {
+    this.id = data.id
+    this.name = data.name
+    this.description = data.description
+    this.img = data.img
+    this.views = data.views
+    this.kept = data.kept
+
+    this.vaultId = data.vaultId
+    this.vaultKeepId = data.vaultKeepId
+
+    this.createdAt = data.createdAt
+    this.updatedAt = data.updatedAt
+    this.creator = new Account(data.creator)
+  }
+}

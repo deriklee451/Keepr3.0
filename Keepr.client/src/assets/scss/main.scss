@@ -1,0 +1,72 @@
+@import "./_variables.scss";
+@import "bootstrap";
+@import "./_overrides.scss";
+@import "./_utilities.scss";
+@import "./loaders.scss";
+@import url('https://fonts.googleapis.com/css2?family=Marko+One&display=swap');
+
+body {
+  overscroll-behavior: none;
+}
+
+.grey {
+  color: #636E72;
+}
+
+.hover {
+  transition: all 0.9s ease;
+  // filter: sepia(20%);
+}
+
+.hover:hover {
+  transform: scale(1.02);
+  filter: brightness(110%);
+  filter: contrast(110%);
+  transition: 0.5s ease;
+  filter: sepia(0%);
+}
+
+.text-shadow {
+  color: aliceblue;
+  text-shadow: 1px 1px black, 0px 0px 5px rgba(219, 85, 23, 0.962);
+  font-weight: bold;
+  letter-spacing: 0.10rem;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--body-bg);
+}
+
+main {
+  flex-grow: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+.marko {
+  font-family: 'Marko One', serif;
+}
+
+input,
+textarea,
+select {
+  &:not(:placeholder-shown) {
+    &:valid {
+      border: 1px solid $success;
+    }
+
+    &:invalid {
+      border: 1px solid $danger;
+    }
+  }
+}
+
+form:invalid button[type="submit"] {
+  filter: grayscale(1);
+  pointer-events: none;
+}
